@@ -12,8 +12,9 @@ const LinearSearch = () => {
   const [foundIndex, setFoundIndex] = useState(-1);
   const [isAnimating, setIsAnimating] = useState(false);
   const [message, setMessage] = useState("");
+  const [messageType, setMessageType] = useState(""); // FIX: "success" | "error" | "warning"
   const [speed, setSpeed] = useState(1);
-  const speedRef = useRef(1); // FIX: tracks current speed without closure issues
+  const speedRef = useRef(1);
   const animationRef = useRef(null);
   const formRef = useRef(null);
   const elementRefs = useRef([]);
@@ -30,6 +31,7 @@ const LinearSearch = () => {
     setCurrentIndex(-1);
     setFoundIndex(-1);
     setMessage("");
+    setMessageType(""); // FIX: reset message type
     setIsAnimating(false);
     setArrayElements("");
     setTarget("");
@@ -47,7 +49,7 @@ const LinearSearch = () => {
 
   const generateRandomArray = () => {
     if (isAnimating) return;
-    const size = Math.floor(Math.random() * 4) + 2; // Random size between 2 and 5
+    const size = Math.floor(Math.random() * 4) + 2;
     const elements = Array.from({ length: size }, () =>
       Math.floor(Math.random() * 100)
     );
@@ -60,6 +62,7 @@ const LinearSearch = () => {
 
     if (!arrayElements || !target) {
       setMessage("Please fill in all fields.");
+      setMessageType("warning"); // FIX: validation error → warning
       return;
     }
 
@@ -68,6 +71,7 @@ const LinearSearch = () => {
 
     if (elements.some(isNaN) || isNaN(targetValue)) {
       setMessage("Invalid array elements or target.");
+      setMessageType("warning"); // FIX: validation error → warning
       return;
     }
 
@@ -76,6 +80,7 @@ const LinearSearch = () => {
     setCurrentIndex(-1);
     setFoundIndex(-1);
     setMessage("");
+    setMessageType("");
 
     // start animation
     animateLinearSearch(elements, targetValue);
@@ -83,11 +88,11 @@ const LinearSearch = () => {
 
   const animateLinearSearch = (arr, targetValue) => {
     let index = 0;
-    // FIX: delay is no longer captured once here — it is read inside step() instead
 
     const step = () => {
       if (index >= arr.length) {
         setMessage(`Element ${targetValue} not found in the array.`);
+        setMessageType("error"); // FIX: search result "not found" → red
         setIsAnimating(false);
         return;
       }
@@ -100,19 +105,18 @@ const LinearSearch = () => {
         if (idx === index) {
           gsap.to(ref, { backgroundColor: "#EAB308", borderColor: "#A16207", duration: 0.3 });
         } else if (idx < index) {
-          // checked elements
           gsap.to(ref, { backgroundColor: "#93C5FD", borderColor: "#3B82F6", duration: 0.3 });
         } else {
           gsap.to(ref, { backgroundColor: "#E5E7EB", borderColor: "#D1D5DB", duration: 0.3 });
         }
       });
 
-      // FIX: read delay fresh on every step so speed changes take effect immediately
       const delay = 1500 / speedRef.current;
       animationRef.current = setTimeout(() => {
         if (arr[index] === targetValue) {
           setFoundIndex(index);
           setMessage(`Element ${targetValue} found at index ${index}!`);
+          setMessageType("success"); // FIX: found → green
           setIsAnimating(false);
           gsap.to(elementRefs.current[index], { backgroundColor: "#22C55E", borderColor: "#15803D", duration: 0.3 });
         } else {
@@ -125,7 +129,6 @@ const LinearSearch = () => {
     step();
   };
 
-  // FIX: sync speedRef alongside state so animateLinearSearch always reads the latest value
   const increaseSpeed = () => {
     setSpeed((prev) => {
       const next = Math.min(prev + 0.5, 5);
@@ -141,6 +144,14 @@ const LinearSearch = () => {
       return next;
     });
   };
+
+  // FIX: derive message box classes from messageType instead of foundIndex
+  const messageClass =
+    messageType === "success"
+      ? "bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200"
+      : messageType === "warning"
+      ? "bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200"
+      : "bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200";
 
   return (
     <main className="container mx-auto">
@@ -225,13 +236,7 @@ const LinearSearch = () => {
       </form>
 
       {message && (
-        <div
-          className={`max-w-3xl mx-auto mb-8 p-4 rounded-lg ${
-            foundIndex !== -1
-              ? "bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200"
-              : "bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200"
-          }`}
-        >
+        <div className={`max-w-3xl mx-auto mb-8 p-4 rounded-lg ${messageClass}`}>
           <p className="text-center font-medium">{message}</p>
         </div>
       )}
