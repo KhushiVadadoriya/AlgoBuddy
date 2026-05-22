@@ -4,6 +4,13 @@ import { gsap } from "gsap";
 import ResetButton from "@/app/components/ui/resetButton";
 import GoButton from "@/app/components/ui/goButton";
 
+const getFontSize = (value) => {
+  const len = String(value).length;
+  if (len <= 2) return "text-lg";
+  if (len === 3) return "text-sm";
+  return "text-xs";
+};
+
 const LinearSearch = () => {
   const [arrayElements, setArrayElements] = useState("");
   const [target, setTarget] = useState("");

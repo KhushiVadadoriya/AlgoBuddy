@@ -4,6 +4,13 @@ import { gsap } from "gsap";
 import RandomArray from "@/app/components/ui/randomArray";
 import CustomArrayInput from "@/app/components/ui/customArrayInput";
 
+const getFontSize = (value) => {
+  const len = String(value).length;
+  if (len <= 2) return "text-lg";
+  if (len === 3) return "text-sm";
+  return "text-xs";
+};
+
 const InsertionSortVisualizer = () => {
   const [array, setArray] = useState([]);
   const [sorting, setSorting] = useState(false);
