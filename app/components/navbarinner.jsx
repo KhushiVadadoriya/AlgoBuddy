@@ -4,8 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { useUser } from "@/app/contexts/UserContext";
 import { supabase } from "@/lib/supabase";
-
-const NAV_LINKS = [];
+import { NAV_LINKS } from "./navLinks";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
