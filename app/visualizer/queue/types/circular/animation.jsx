@@ -129,7 +129,7 @@ const CircularQueueVisualizer = () => {
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               placeholder="Enter value"
-              className="flex-1 p-3 border dark:border-gray-700 rounded-lg dark:bg-neutral-900 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+              className="flex-1 p-3 border dark:border-gray-700 rounded-lg dark:bg-neutral-900 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
               disabled={isAnimating}
               onKeyDown={(e) => e.key === "Enter" && enqueue()}
             />
@@ -152,14 +152,14 @@ const CircularQueueVisualizer = () => {
             <button
               onClick={enqueue}
               disabled={isAnimating || isFull}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg disabled:opacity-50 transition-all"
+              className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-3 rounded-lg disabled:opacity-50 transition-all"
             >
               Enqueue Rear
             </button>
             <button
               onClick={dequeue}
               disabled={isAnimating || isEmpty}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg disabled:opacity-50 transition-all"
+              className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-3 rounded-lg disabled:opacity-50 transition-all"
             >
               Dequeue Front
             </button>
@@ -189,7 +189,7 @@ const CircularQueueVisualizer = () => {
           {/* Status banners */}
           <div className="flex flex-col gap-3 mt-4 items-center">
             {operation && (
-              <div className="p-3 rounded-lg bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 border border-blue-200 dark:border-blue-800 flex items-center gap-2 justify-center">
+              <div className="p-3 rounded-lg bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-200 border border-purple-200 dark:border-purple-800 flex items-center gap-2 justify-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5 animate-spin"
@@ -226,7 +226,7 @@ const CircularQueueVisualizer = () => {
           <div className="bg-white dark:bg-neutral-950 p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700">
             <div className="flex items-center gap-3 w-full justify-center">
               {/* Front pointer */}
-              <div className="text-blue-600 dark:text-blue-400 font-medium flex flex-col items-center">
+              <div className="text-purple-600 dark:text-purple-400 font-medium flex flex-col items-center">
                 <span>Front</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -256,7 +256,7 @@ const CircularQueueVisualizer = () => {
                           item === null
                             ? "border-dashed border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-900/30 text-gray-400"
                             : isFront
-                            ? "border-blue-300 dark:border-blue-700 bg-blue-50 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200"
+                            ? "border-purple-300 dark:border-purple-700 bg-purple-50 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200"
                             : isRear
                             ? "border-green-300 dark:border-green-700 bg-green-50 dark:bg-green-900/30 text-green-800 dark:text-green-200"
                             : "border-gray-200 dark:border-gray-600 bg-white dark:bg-neutral-900"

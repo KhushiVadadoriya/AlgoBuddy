@@ -983,7 +983,7 @@ export default function TreeBSTVisualizer({ initialMode }) {
                   <span className="text-slate-400">Comparing (visiting)</span>
                 </div>
                 <div className="flex items-center gap-1.5 bg-slate-950/70 border border-slate-800 px-2.5 py-1 rounded-lg">
-                  <span className="w-2.5 h-2.5 rounded-full bg-blue-500 shadow-md shadow-blue-950"></span>
+                  <span className="w-2.5 h-2.5 rounded-full bg-purple-500 shadow-md shadow-purple-950"></span>
                   <span className="text-slate-400">Path Traversed</span>
                 </div>
                 {mode === "searching" && (
@@ -1061,7 +1061,7 @@ export default function TreeBSTVisualizer({ initialMode }) {
                         fillHex = "#a855f7"; // purple-500
                         strokeHex = "#c084fc";
                       } else if (isVisited) {
-                        fillHex = "#3b82f6"; // blue-500
+                        fillHex = "#3b82f6"; // purple-500
                         strokeHex = "#60a5fa";
                       }
 

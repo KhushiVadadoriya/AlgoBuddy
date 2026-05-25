@@ -93,7 +93,7 @@ const PriorityQueueVisualizer = () => {
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               placeholder="Value"
-              className="flex-1 p-3 border dark:border-gray-700 rounded-lg dark:bg-neutral-900 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+              className="flex-1 p-3 border dark:border-gray-700 rounded-lg dark:bg-neutral-900 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
               disabled={isAnimating}
             />
             <input
@@ -101,7 +101,7 @@ const PriorityQueueVisualizer = () => {
               value={inputPriority}
               onChange={(e) => setInputPriority(e.target.value)}
               placeholder="Priority number"
-              className="flex-1 p-3 border dark:border-gray-700 rounded-lg dark:bg-neutral-900 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+              className="flex-1 p-3 border dark:border-gray-700 rounded-lg dark:bg-neutral-900 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
               disabled={isAnimating}
             />
           </div>
@@ -111,7 +111,7 @@ const PriorityQueueVisualizer = () => {
             <button
               onClick={insert}
               disabled={isAnimating}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg disabled:opacity-50 transition-all"
+              className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-3 rounded-lg disabled:opacity-50 transition-all"
             >
               Insert
             </button>
@@ -141,7 +141,7 @@ const PriorityQueueVisualizer = () => {
           {/* Status banners */}
           <div className="flex flex-col gap-3 mt-4 items-center">
             {operation && (
-              <div className="p-3 rounded-lg bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 border border-blue-200 dark:border-blue-800 flex items-center gap-2 justify-center">
+              <div className="p-3 rounded-lg bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-200 border border-purple-200 dark:border-purple-800 flex items-center gap-2 justify-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5 animate-spin"
@@ -189,7 +189,7 @@ const PriorityQueueVisualizer = () => {
                   <div
                     className={`w-24 h-24 rounded-lg shadow-md flex flex-col items-center justify-center text-lg font-medium border-2 ${
                       idx === 0
-                        ? "border-blue-300 dark:border-blue-700 bg-blue-50 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200"
+                        ? "border-purple-300 dark:border-purple-700 bg-purple-50 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200"
                         : "border-gray-200 dark:border-gray-600 bg-white dark:bg-neutral-900"
                     }`}
                   >

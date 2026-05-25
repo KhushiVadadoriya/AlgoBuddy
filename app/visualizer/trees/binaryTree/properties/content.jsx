@@ -43,7 +43,7 @@ export default function Content() {
       depth: 1,
       level: 2,
       height: 1,
-      color: 'from-blue-500 to-cyan-600',
+      color: 'from-purple-500 to-cyan-600',
     },
     C: {
       name: 'Node C',
@@ -56,7 +56,7 @@ export default function Content() {
       depth: 1,
       level: 2,
       height: 1,
-      color: 'from-blue-500 to-cyan-600',
+      color: 'from-purple-500 to-cyan-600',
     },
     D: {
       name: 'Node D',
@@ -214,7 +214,7 @@ export default function Content() {
     {
       title: 'File Systems',
       desc: 'While general hierarchies represent folders, directory search structures are frequently balanced using binary trees to enable instantaneous lookups.',
-      icon: <Database className="w-6 h-6 text-blue-500" />
+      icon: <Database className="w-6 h-6 text-purple-500" />
     },
     {
       title: 'Decision Trees',
@@ -307,7 +307,7 @@ export default function Content() {
                       className={`transition-all duration-300 stroke-[2.5px] ${
                         isSelected 
                           ? 'fill-purple-600 stroke-purple-300 dark:stroke-purple-800 r-18' 
-                          : 'fill-blue-500 stroke-blue-700 dark:fill-zinc-800 dark:stroke-neutral-600 group-hover:fill-blue-400 dark:group-hover:fill-neutral-700'
+                          : 'fill-purple-500 stroke-purple-700 dark:fill-zinc-800 dark:stroke-neutral-600 group-hover:fill-purple-400 dark:group-hover:fill-neutral-700'
                       }`}
                     />
                     <text
@@ -370,9 +370,9 @@ export default function Content() {
                 <span className="block text-xs font-semibold text-purple-600 dark:text-purple-400 uppercase mb-0.5">Depth</span>
                 <span className="text-lg font-black text-purple-700 dark:text-purple-300">{treeNodes[selectedNode].depth}</span>
               </div>
-              <div className="text-center bg-blue-500/10 dark:bg-blue-500/5 py-2.5 rounded-xl border border-blue-200/40 dark:border-blue-950/20">
-                <span className="block text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase mb-0.5">Level</span>
-                <span className="text-lg font-black text-blue-700 dark:text-blue-300">{treeNodes[selectedNode].level}</span>
+              <div className="text-center bg-purple-500/10 dark:bg-purple-500/5 py-2.5 rounded-xl border border-purple-200/40 dark:border-purple-950/20">
+                <span className="block text-xs font-semibold text-purple-600 dark:text-purple-400 uppercase mb-0.5">Level</span>
+                <span className="text-lg font-black text-purple-700 dark:text-purple-300">{treeNodes[selectedNode].level}</span>
               </div>
               <div className="text-center bg-emerald-500/10 dark:bg-emerald-500/5 py-2.5 rounded-xl border border-emerald-200/40 dark:border-emerald-950/20">
                 <span className="block text-xs font-semibold text-emerald-600 dark:text-emerald-400 uppercase mb-0.5">Height</span>

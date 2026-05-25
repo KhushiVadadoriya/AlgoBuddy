@@ -100,10 +100,10 @@ const Content = () => {
                       transition={{ type: "spring", stiffness: 120, delay: idx * 0.1 }}
                       whileHover={{ y: -4, boxShadow: "0 10px 20px -5px rgba(0,0,0,0.1)" }}
                       className="p-4 rounded-lg bg-gray-50 dark:bg-neutral-900
-                                 border border-transparent hover:border-blue-300
-                                 dark:hover:border-blue-500 transition"
+                                 border border-transparent hover:border-purple-300
+                                 dark:hover:border-purple-500 transition"
                     >
-                      <span className="inline-block mb-2 px-2 py-0.5 rounded-full text-xs font-semibold bg-indigo-100 dark:bg-blue-900 text-blue-700 dark:text-indigo-200">
+                      <span className="inline-block mb-2 px-2 py-0.5 rounded-full text-xs font-semibold bg-indigo-100 dark:bg-purple-900 text-purple-700 dark:text-indigo-200">
                         Step {idx + 1}
                       </span>
                       <h3 className="font-semibold mb-2">{t}</h3>
@@ -134,10 +134,10 @@ const Content = () => {
                       transition={{ type: "spring", stiffness: 120, delay: idx * 0.1 }}
                       whileHover={{ y: -4, boxShadow: "0 10px 20px -5px rgba(0,0,0,0.1)" }}
                       className="p-4 rounded-lg bg-gray-50 dark:bg-neutral-900
-                                 border border-transparent hover:border-blue-300
-                                 dark:hover:border-blue-600 transition"
+                                 border border-transparent hover:border-purple-300
+                                 dark:hover:border-purple-600 transition"
                     >
-                      <span className="inline-block mb-2 px-2 py-0.5 rounded-full text-xs font-semibold bg-indigo-100 dark:bg-blue-900 text-blue-700 dark:text-indigo-200">
+                      <span className="inline-block mb-2 px-2 py-0.5 rounded-full text-xs font-semibold bg-indigo-100 dark:bg-purple-900 text-purple-700 dark:text-indigo-200">
                         Step {idx + 1}
                       </span>
                       <h3 className="font-semibold mb-2">{t}</h3>
@@ -162,12 +162,12 @@ const Content = () => {
             Time Complexity
           </h1>
           <div className="prose dark:prose-invert max-w-none overflow-x-auto">
-            <table className="min-w-full border-collapse border border-blue-400">
+            <table className="min-w-full border-collapse border border-purple-400">
               <thead>
-                <tr className="bg-blue-100 dark:bg-blue-900">
-                  <th className="border border-blue-400 p-3 font-semibold">Operation</th>
-                  <th className="border border-blue-400 p-3 font-semibold">Complexity</th>
-                  <th className="border border-blue-400 p-3 font-semibold hidden sm:table-cell">Reason</th>
+                <tr className="bg-purple-100 dark:bg-purple-900">
+                  <th className="border border-purple-400 p-3 font-semibold">Operation</th>
+                  <th className="border border-purple-400 p-3 font-semibold">Complexity</th>
+                  <th className="border border-purple-400 p-3 font-semibold hidden sm:table-cell">Reason</th>
                 </tr>
               </thead>
               <tbody>
@@ -177,10 +177,10 @@ const Content = () => {
                   ["peek()", "O(1)", "Single array access"],
                   ["isEmpty()", "O(1)", "Pointer comparison"],
                 ].map(([op, comp, reason], index) => (
-                  <tr key={op} className={index % 2 === 0 ? "bg-white dark:bg-neutral-950" : "bg-blue-50 dark:bg-neutral-900"}>
-                    <td className="border border-blue-400 p-3">{op}</td>
-                    <td className="border border-blue-400 p-3 font-mono">{comp}</td>
-                    <td className="border border-blue-400 p-3 hidden sm:table-cell">{reason}</td>
+                  <tr key={op} className={index % 2 === 0 ? "bg-white dark:bg-neutral-950" : "bg-purple-50 dark:bg-neutral-900"}>
+                    <td className="border border-purple-400 p-3">{op}</td>
+                    <td className="border border-purple-400 p-3 font-mono">{comp}</td>
+                    <td className="border border-purple-400 p-3 hidden sm:table-cell">{reason}</td>
                   </tr>
                 ))}
               </tbody>

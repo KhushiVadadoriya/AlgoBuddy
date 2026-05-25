@@ -233,7 +233,7 @@ const QuickSortVisualizer = () => {
                     Partition {idx + 1}: Indexes {partition.low} to{" "}
                     {partition.high}
                   </span>
-                  <span className="text-xs bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded">
+                  <span className="text-xs bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded">
                     {subArray.length} elements
                   </span>
                 </div>
@@ -257,7 +257,7 @@ const QuickSortVisualizer = () => {
                                   : isLeft
                                   ? "bg-yellow-400 dark:bg-yellow-600 border-yellow-600 dark:border-yellow-400"
                                   : isRight
-                                  ? "bg-blue-400 dark:bg-blue-600 border-blue-600 dark:border-blue-400"
+                                  ? "bg-purple-400 dark:bg-purple-600 border-purple-600 dark:border-purple-400"
                                   : "bg-gray-200 dark:bg-gray-700 border-gray-300 dark:border-gray-600"
                               }`}
                         >
@@ -390,7 +390,7 @@ const QuickSortVisualizer = () => {
                                 : isLeft
                                 ? "bg-yellow-400 dark:bg-yellow-600 border-yellow-600 dark:border-yellow-400"
                                 : isRight
-                                ? "bg-blue-400 dark:bg-blue-600 border-blue-600 dark:border-blue-400"
+                                ? "bg-purple-400 dark:bg-purple-600 border-purple-600 dark:border-purple-400"
                                 : isPartition
                                 ? "bg-green-400 dark:bg-green-600 border-green-600 dark:border-green-400"
                                 : isInPartition

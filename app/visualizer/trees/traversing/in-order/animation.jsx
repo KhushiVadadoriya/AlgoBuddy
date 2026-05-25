@@ -204,7 +204,7 @@ export default function InOrderVisualizer() {
             <button
               onClick={generateRandomTree}
               disabled={isAnimating}
-              className="mb-2 w-full rounded-lg bg-blue-600 px-4 py-2 text-white transition-colors hover:bg-blue-700 disabled:opacity-50"
+              className="mb-2 w-full rounded-lg bg-purple-600 px-4 py-2 text-white transition-colors hover:bg-purple-700 disabled:opacity-50"
             >
               Generate Random Tree
             </button>
@@ -214,7 +214,7 @@ export default function InOrderVisualizer() {
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 placeholder="Enter number"
-                className="flex-1 rounded-lg border p-2 transition-all focus:border-transparent focus:ring-2 focus:ring-blue-500 dark:bg-gray-700"
+                className="flex-1 rounded-lg border p-2 transition-all focus:border-transparent focus:ring-2 focus:ring-purple-500 dark:bg-gray-700"
                 disabled={isAnimating}
                 onKeyDown={(e) => e.key === "Enter" && handleInsert()}
               />
@@ -277,7 +277,7 @@ export default function InOrderVisualizer() {
           message.includes("complete")
             ? "border-green-200 bg-green-50 dark:border-green-900 dark:bg-green-950/30"
             : isAnimating
-              ? "border-blue-200 bg-blue-50 dark:border-blue-900 dark:bg-blue-950/30"
+              ? "border-purple-200 bg-purple-50 dark:border-purple-900 dark:bg-purple-950/30"
               : ""
         }
       >
@@ -362,8 +362,8 @@ export default function InOrderVisualizer() {
             <p className="mt-2">For BSTs, this produces nodes in sorted order.</p>
           </div>
 
-          <div className="rounded-lg border border-blue-200 bg-blue-50 p-3 dark:border-blue-700 dark:bg-blue-900/20">
-            <h3 className="mb-2 text-sm font-medium text-blue-800 dark:text-blue-200">Algorithm:</h3>
+          <div className="rounded-lg border border-purple-200 bg-purple-50 p-3 dark:border-purple-700 dark:bg-purple-900/20">
+            <h3 className="mb-2 text-sm font-medium text-purple-800 dark:text-purple-200">Algorithm:</h3>
             <pre className="overflow-x-auto rounded bg-gray-100 p-2 text-xs dark:bg-gray-700">
 {`function inOrder(node) {
   if (node !== null) {

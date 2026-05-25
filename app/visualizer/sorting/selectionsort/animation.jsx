@@ -263,7 +263,7 @@ const SelectionSortVisualizer = () => {
                                 ? "bg-pink-400 dark:bg-pink-600 border-pink-600 dark:border-pink-400"
                                 : isSorted
                                 ? "bg-green-400 dark:bg-green-600 border-green-600 dark:border-green-400"
-                                : "bg-blue-400 dark:bg-blue-600 border-blue-600 dark:border-blue-400"
+                                : "bg-purple-400 dark:bg-purple-600 border-purple-600 dark:border-purple-400"
                             }`}
                         >
                           {value}

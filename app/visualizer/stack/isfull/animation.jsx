@@ -59,7 +59,7 @@ const StackVisualizer = () => {
         <button
           onClick={checkIfFull}
           disabled={isAnimating}
-          className="w-full mb-4 duration-300 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded disabled:opacity-50"
+          className="w-full mb-4 duration-300 bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded disabled:opacity-50"
         >
           Check If Full
         </button>
@@ -70,7 +70,7 @@ const StackVisualizer = () => {
 
           {/* Operation Status */}
           {operation && (
-            <div className="mb-4 p-3 rounded-lg bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200">
+            <div className="mb-4 p-3 rounded-lg bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200">
               {operation}
             </div>
           )}
@@ -119,7 +119,7 @@ const StackVisualizer = () => {
                       key={index}
                       className={`p-3 border-2 rounded text-center font-medium transition-all duration-300 ${
                         index === 0
-                          ? "bg-blue-100 dark:bg-blue-900 border-blue-300 dark:border-blue-700"
+                          ? "bg-purple-100 dark:bg-purple-900 border-purple-300 dark:border-purple-700"
                           : "bg-white dark:bg-gray-700 border-gray-200 dark:border-gray-600"
                       } ${
                         isAnimating &&

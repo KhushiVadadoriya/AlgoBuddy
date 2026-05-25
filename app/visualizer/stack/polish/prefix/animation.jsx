@@ -12,7 +12,7 @@ const AnimatedStackItem = ({ char, isTop }) => (
     transition={{ type: "spring", stiffness: 300, damping: 20 }}
     className={`p-3 border-2 rounded text-center font-medium ${
       isTop
-        ? "bg-blue-100 dark:bg-blue-900 border-blue-300"
+        ? "bg-purple-100 dark:bg-purple-900 border-purple-300"
         : "bg-white dark:bg-gray-700 border-gray-200"
     }`}
   >
@@ -246,12 +246,12 @@ const InfixToPrefixVisualizer = () => {
               value={infix}
               onChange={(e) => setInfix(e.target.value)}
               placeholder="Enter infix expression (e.g., (A+B)*C)"
-              className="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-neutral-900 dark:text-white"
+              className="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 dark:bg-neutral-900 dark:text-white"
             />
             <button
               onClick={convertInfixToPrefix}
               disabled={isProcessing}
-              className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50"
+              className="px-6 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 disabled:opacity-50"
             >
               {isProcessing ? "Converting..." : "Convert"}
             </button>
@@ -270,7 +270,7 @@ const InfixToPrefixVisualizer = () => {
                 >
                   Previous
                 </button>
-                <button onClick={togglePlayPause} className="px-4 py-2 bg-blue-600 text-white rounded-md">
+                <button onClick={togglePlayPause} className="px-4 py-2 bg-purple-600 text-white rounded-md">
                   {isPlaying ? "Pause" : "Play"}
                 </button>
                 <button
@@ -299,7 +299,7 @@ const InfixToPrefixVisualizer = () => {
               </div>
               <div className="w-full bg-gray-200 dark:bg-neutral-900 rounded-full h-2.5">
                 <motion.div
-                  className="bg-blue-600 h-2.5 rounded-full"
+                  className="bg-purple-600 h-2.5 rounded-full"
                   initial={false}
                   animate={{ width: `${(currentStep / (steps.length - 1)) * 100}%` }}
                   transition={{ type: "spring", stiffness: 80 }}
@@ -313,7 +313,7 @@ const InfixToPrefixVisualizer = () => {
         <div ref={statusRef} className="bg-white dark:bg-neutral-950 p-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 mb-6">
           <h2 className="text-xl font-semibold mb-4">Conversion Status</h2>
           {operation && (
-            <div className="mb-4 p-3 rounded-lg bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200">
+            <div className="mb-4 p-3 rounded-lg bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200">
               {operation}
             </div>
           )}
@@ -411,7 +411,7 @@ const InfixToPrefixVisualizer = () => {
                       key={idx}
                       onClick={() => jumpToStep(idx)}
                       className={`cursor-pointer ${
-                        currentStep === idx ? "bg-blue-50 dark:bg-neutral-950" : "hover:bg-gray-50 dark:hover:bg-neutral-950"
+                        currentStep === idx ? "bg-purple-50 dark:bg-neutral-950" : "hover:bg-gray-50 dark:hover:bg-neutral-950"
                       }`}
                       whileHover={{ scale: 1.01 }}
                       whileTap={{ scale: 0.98 }}

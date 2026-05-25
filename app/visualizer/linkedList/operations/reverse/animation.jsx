@@ -253,7 +253,7 @@ const LinkedListReverse = () => {
           <button
             onClick={animateReverse}
             disabled={isAnimating || list.length === 0}
-            className="flex-1 rounded-lg bg-blue-600 px-4 py-3 text-white transition hover:bg-blue-700 disabled:bg-gray-400 sm:px-6"
+            className="flex-1 rounded-lg bg-purple-600 px-4 py-3 text-white transition hover:bg-purple-700 disabled:bg-gray-400 sm:px-6"
           >
             {isAnimating ? "Reversing..." : "Reverse List"}
           </button>
@@ -273,7 +273,7 @@ const LinkedListReverse = () => {
             <span>List Node</span>
           </div>
           <div className="flex items-center">
-            <div className="mr-2 h-4 w-4 rounded-md bg-blue-600"></div>
+            <div className="mr-2 h-4 w-4 rounded-md bg-purple-600"></div>
             <span>Current Node</span>
           </div>
           <div className="flex items-center">
@@ -306,7 +306,7 @@ const LinkedListReverse = () => {
                       ref={(el) => (listRefs.current[index] = el)}
                       className={`node flex h-16 w-20 flex-col items-center justify-center rounded-md text-lg text-white shadow-md transition-all ${
                         index === currentPointer
-                          ? "scale-110 bg-blue-600 ring-4 ring-blue-300"
+                          ? "scale-110 bg-purple-600 ring-4 ring-purple-300"
                           : index === prevPointer
                             ? "scale-105 bg-amber-500 ring-4 ring-amber-300"
                             : index === nextPointer

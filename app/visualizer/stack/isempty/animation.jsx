@@ -148,7 +148,7 @@ const StackVisualizer = () => {
             <button
               onClick={push}
               disabled={isAnimating}
-              className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded disabled:opacity-50"
+              className="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded disabled:opacity-50"
             >
               Push
             </button>
@@ -177,7 +177,7 @@ const StackVisualizer = () => {
 
           {/* Operation Status */}
           {operation && (
-            <div className="mb-4 p-3 rounded-lg bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200">
+            <div className="mb-4 p-3 rounded-lg bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200">
               {operation}
             </div>
           )}
@@ -221,7 +221,7 @@ const StackVisualizer = () => {
                         index === 0 && peekedItem !== null
                           ? "bg-purple-200 dark:bg-purple-800 border-purple-400 dark:border-purple-600"
                           : index === 0
-                          ? "bg-blue-100 dark:bg-blue-900 border-blue-300 dark:border-blue-700"
+                          ? "bg-purple-100 dark:bg-purple-900 border-purple-300 dark:border-purple-700"
                           : "bg-white dark:bg-gray-700 border-gray-200 dark:border-gray-600"
                       }`}
                     >

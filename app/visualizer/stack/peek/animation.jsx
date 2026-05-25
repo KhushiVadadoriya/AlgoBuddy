@@ -104,7 +104,7 @@ const StackVisualizer = () => {
         <button
           onClick={addRandomStack}
           disabled={isAnimating || stack.length}
-          className="w-full mb-4 bg-blue-500 hover:bg-blue-600 text-white dark:text-black px-4 py-2 rounded disabled:opacity-50"
+          className="w-full mb-4 bg-purple-500 hover:bg-purple-600 text-white dark:text-black px-4 py-2 rounded disabled:opacity-50"
         >
           Add Random Stack
         </button>
@@ -131,7 +131,7 @@ const StackVisualizer = () => {
                       key={idx}
                       ref={(el) => (itemRefs.current[idx] = el)}
                       className={`p-4 rounded-lg border-2 text-center font-medium transition-all ${
-                        idx === 0 ? "bg-blue-100 dark:bg-blue-900 border-blue-300 dark:border-blue-700" : "bg-white dark:bg-gray-700 border-gray-200 dark:border-gray-600"
+                        idx === 0 ? "bg-purple-100 dark:bg-purple-900 border-purple-300 dark:border-purple-700" : "bg-white dark:bg-gray-700 border-gray-200 dark:border-gray-600"
                       }`}
                     >
                       {num}

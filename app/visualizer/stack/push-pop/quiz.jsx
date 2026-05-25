@@ -221,35 +221,35 @@ const StackQuiz = () => {
           className="text-center"
         >
           <div className="flex justify-center mb-6">
-            <div className="bg-blue-100 dark:bg-neutral-900 p-4 rounded-full">
-              <FaAward className="text-4xl text-blue-500 dark:text-blue-500" />
+            <div className="bg-purple-100 dark:bg-neutral-900 p-4 rounded-full">
+              <FaAward className="text-4xl text-purple-500 dark:text-purple-500" />
             </div>
           </div>
           <h2 className="text-2xl font-bold mb-4 text-black dark:text-gray-100">
             Stack Quiz Challenge
           </h2>
           <div className="bg-white dark:bg-neutral-900 p-4 rounded-lg mb-6 text-left shadow-inner">
-            <h3 className="font-bold mb-2 flex items-center text-blue-600 dark:text-blue-400">
+            <h3 className="font-bold mb-2 flex items-center text-purple-600 dark:text-purple-400">
               <FaInfoCircle className="mr-2" /> How it works:
             </h3>
           <ul className="space-y-2 text-sm">
             <li className="flex items-start">
-              <FaCheck className="text-blue-500 mt-1 mr-2 flex-shrink-0" />
+              <FaCheck className="text-purple-500 mt-1 mr-2 flex-shrink-0" />
               <span>+1 point for each correct answer</span>
             </li>
             <li className="flex items-start">
-              <FaTimes className="text-blue-500 mt-1 mr-2 flex-shrink-0" />
+              <FaTimes className="text-purple-500 mt-1 mr-2 flex-shrink-0" />
               <span>0 points for wrong answers</span>
             </li>
             <li className="flex items-start">
-              <FaTrophy className="text-blue-500 mt-1 mr-2 flex-shrink-0" />
+              <FaTrophy className="text-purple-500 mt-1 mr-2 flex-shrink-0" />
               <span>Earn stars based on your final score (max 5 stars)</span>
             </li>
           </ul>
           </div>
           <button
             onClick={startQuiz}
-            className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:from-blue-600 hover:to-purple-600 transition-all shadow-md hover:shadow-lg flex items-center mx-auto"
+            className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:from-purple-600 hover:to-purple-600 transition-all shadow-md hover:shadow-lg flex items-center mx-auto"
           >
             Start Quiz <FaArrowRight className="ml-2" />
           </button>
@@ -286,16 +286,16 @@ const StackQuiz = () => {
         <div className="quiz-container">
           <div className="mb-6">
             <div className="flex justify-between items-center mb-1">
-              <span className="text-sm font-medium text-blue-600 dark:text-blue-400">
+              <span className="text-sm font-medium text-purple-600 dark:text-purple-400">
                 Question {currentQuestion + 1} of {questions.length}
               </span>
-              <span className="text-sm font-medium bg-blue-100 dark:bg-blue-900/30 px-2 py-1 rounded text-blue-600 dark:text-blue-400">
+              <span className="text-sm font-medium bg-purple-100 dark:bg-purple-900/30 px-2 py-1 rounded text-purple-600 dark:text-purple-400">
                 Score: {score.toFixed(1)}
               </span>
             </div>
             <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
               <div
-                className="bg-gradient-to-r from-blue-500 to-purple-500 h-2.5 rounded-full transition-all duration-500"
+                className="bg-gradient-to-r from-purple-500 to-purple-500 h-2.5 rounded-full transition-all duration-500"
                 style={{
                   width: `${((currentQuestion + 1) / questions.length) * 100}%`,
                 }}
@@ -321,7 +321,7 @@ const StackQuiz = () => {
                   whileTap={{ scale: 0.98 }}
                   className={`p-4 border rounded-lg cursor-pointer transition-all ${
                     selectedAnswer === index
-                      ? "border-blue-500 bg-blue-50 dark:bg-blue-900/20 shadow-md"
+                      ? "border-purple-500 bg-purple-50 dark:bg-purple-900/20 shadow-md"
                       : "border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700"
                   }`}
                   onClick={() => handleAnswerSelect(index)}
@@ -330,7 +330,7 @@ const StackQuiz = () => {
                     <span
                       className={`font-medium mr-3 w-6 h-6 flex items-center justify-center rounded-full ${
                         selectedAnswer === index
-                          ? "bg-blue-500 text-white"
+                          ? "bg-purple-500 text-white"
                           : "bg-gray-200 dark:bg-gray-600"
                       }`}
                     >
@@ -357,7 +357,7 @@ const StackQuiz = () => {
             <button
               onClick={handleNextQuestion}
               disabled={selectedAnswer === null}
-              className="px-4 py-2 bg-blue-600 text-white rounded-lg disabled:opacity-50 hover:from-blue-600 hover:to-purple-600 transition-all flex items-center shadow-md hover:shadow-lg"
+              className="px-4 py-2 bg-purple-600 text-white rounded-lg disabled:opacity-50 hover:from-purple-600 hover:to-purple-600 transition-all flex items-center shadow-md hover:shadow-lg"
             >
               {currentQuestion === questions.length - 1 ? "Finish" : "Next"}{" "}
               <FaArrowRight className="ml-2" />
@@ -372,8 +372,8 @@ const StackQuiz = () => {
         >
           <div className="text-center mb-8">
             <div className="relative inline-block mb-4">
-              <div className="w-32 h-32 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/20 dark:to-purple-900/20 rounded-full flex items-center justify-center shadow-lg">
-                <div className="text-4xl font-bold text-blue-600 dark:text-blue-400">
+              <div className="w-32 h-32 bg-gradient-to-br from-purple-100 to-purple-100 dark:from-purple-900/20 dark:to-purple-900/20 rounded-full flex items-center justify-center shadow-lg">
+                <div className="text-4xl font-bold text-purple-600 dark:text-purple-400">
                   {score.toFixed(1)}/{questions.length}
                 </div>
               </div>
@@ -409,7 +409,7 @@ const StackQuiz = () => {
           </div>
 
           <div className="bg-white dark:bg-gray-700 p-4 rounded-lg mb-6 shadow-inner">
-            <h4 className="font-bold mb-3 flex items-center text-blue-600 dark:text-blue-400">
+            <h4 className="font-bold mb-3 flex items-center text-purple-600 dark:text-purple-400">
               <FaInfoCircle className="mr-2" /> Performance Analysis
             </h4>
             <p className="text-sm">{calculateWeakAreas()}</p>
@@ -459,7 +459,7 @@ const StackQuiz = () => {
 
           <button
             onClick={resetQuiz}
-            className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-600 transition-all shadow-md hover:shadow-lg flex items-center justify-center"
+            className="w-full px-6 py-3 bg-purple-600 text-white rounded-lg hover:from-purple-700 hover:to-purple-600 transition-all shadow-md hover:shadow-lg flex items-center justify-center"
           >
             <FaRedo className="mr-2" /> Take Quiz Again
           </button>

@@ -172,10 +172,10 @@ const Content = () => {
       <div className="prose dark:prose-invert max-w-none overflow-x-auto">
         <table className="min-w-full border-collapse border border-gray-400">
           <thead>
-            <tr className="bg-gray-100 dark:bg-blue-900">
-              <th className="border border-blue-400 p-3 font-semibold">Operation</th>
-              <th className="border border-blue-400 p-3 font-semibold">Complexity</th>
-              <th className="border border-blue-400 p-3 font-semibold hidden sm:table-cell">
+            <tr className="bg-gray-100 dark:bg-purple-900">
+              <th className="border border-purple-400 p-3 font-semibold">Operation</th>
+              <th className="border border-purple-400 p-3 font-semibold">Complexity</th>
+              <th className="border border-purple-400 p-3 font-semibold hidden sm:table-cell">
                 Reason
               </th>
             </tr>
@@ -190,13 +190,13 @@ const Content = () => {
             ].map(([op, comp, reason], index) => (
               <tr
                 key={op}
-                className={index % 2 === 0 ? "bg-white dark:bg-neutral-950" : "bg-blue-50 dark:bg-neutral-900"}
+                className={index % 2 === 0 ? "bg-white dark:bg-neutral-950" : "bg-purple-50 dark:bg-neutral-900"}
               >
-                <td className="border border-blue-400 p-3">{op}</td>
-                <td className="border border-blue-400 p-3 font-mono">
+                <td className="border border-purple-400 p-3">{op}</td>
+                <td className="border border-purple-400 p-3 font-mono">
                   {comp}
                 </td>
-                <td className="border border-blue-400 p-3 hidden sm:table-cell">
+                <td className="border border-purple-400 p-3 hidden sm:table-cell">
                   {reason}
                 </td>
               </tr>
@@ -238,10 +238,10 @@ const Content = () => {
       <div className="prose dark:prose-invert max-w-none overflow-x-auto">
         <table className="min-w-full border-collapse border border-gray-400">
           <thead>
-            <tr className="bg-gray-100 dark:bg-blue-900">
-              <th className="border border-blue-400 p-3 font-semibold">Feature</th>
-              <th className="border border-blue-400 p-3 font-semibold">Linked List</th>
-              <th className="border border-blue-400 p-3 font-semibold">Array</th>
+            <tr className="bg-gray-100 dark:bg-purple-900">
+              <th className="border border-purple-400 p-3 font-semibold">Feature</th>
+              <th className="border border-purple-400 p-3 font-semibold">Linked List</th>
+              <th className="border border-purple-400 p-3 font-semibold">Array</th>
             </tr>
           </thead>
           <tbody>
@@ -256,11 +256,11 @@ const Content = () => {
                 key={feature}
                 className={index % 2 === 0 ? "bg-white dark:bg-neutral-950" : "bg-gray-50 dark:bg-neutral-900"}
               >
-                <td className="border border-blue-400 p-3">{feature}</td>
-                <td className="border border-blue-400 p-3 font-mono">
+                <td className="border border-purple-400 p-3">{feature}</td>
+                <td className="border border-purple-400 p-3 font-mono">
                   {ll}
                 </td>
-                <td className="border border-blue-400 p-3 font-mono">
+                <td className="border border-purple-400 p-3 font-mono">
                   {arr}
                 </td>
               </tr>

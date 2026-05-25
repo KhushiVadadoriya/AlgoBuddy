@@ -61,7 +61,7 @@ const QueueVisualizer = () => {
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               placeholder="Enter value..."
-              className="flex-1 p-3 border border-neutral-300 dark:border-gray-500 rounded-lg dark:bg-neutral-900 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all min-w-[180px] max-w-xs"
+              className="flex-1 p-3 border border-neutral-300 dark:border-gray-500 rounded-lg dark:bg-neutral-900 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all min-w-[180px] max-w-xs"
               disabled={isAnimating}
               onKeyDown={(e) => e.key === "Enter" && enqueue()}
             />
@@ -69,14 +69,14 @@ const QueueVisualizer = () => {
               <button
                 onClick={enqueue}
                 disabled={isAnimating}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg disabled:opacity-50 transition-all flex items-center justify-center gap-2"
+                className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-3 rounded-lg disabled:opacity-50 transition-all flex items-center justify-center gap-2"
               >
                 <span>Enqueue</span>
               </button>
               <button
                 onClick={dequeue}
                 disabled={isAnimating || queue.length === 0}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg disabled:opacity-50 transition-all flex items-center justify-center gap-2"
+                className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-3 rounded-lg disabled:opacity-50 transition-all flex items-center justify-center gap-2"
               >
                 <span className="text-base font-medium leading-none">Dequeue</span>
               </button>
@@ -93,7 +93,7 @@ const QueueVisualizer = () => {
           {/* status row */}
           <div className="flex flex-col gap-3 w-full items-center">
             {operation && (
-              <div className="p-3 rounded-lg bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 border border-blue-200 dark:border-blue-800 flex items-center gap-2 justify-center">
+              <div className="p-3 rounded-lg bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-200 border border-purple-200 dark:border-purple-800 flex items-center gap-2 justify-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5 animate-spin"
@@ -159,7 +159,7 @@ const QueueVisualizer = () => {
             {/* Queue row with Front / Rear labels on the sides */}
             <div className="flex items-center gap-3 w-full justify-center">
               {/* Front label */}
-              <div className="text-blue-600 dark:text-blue-400 font-medium flex flex-col items-center">
+              <div className="text-purple-600 dark:text-purple-400 font-medium flex flex-col items-center">
                 <span>Front</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -191,7 +191,7 @@ const QueueVisualizer = () => {
                     <div
                       className={`w-24 h-24 rounded-lg shadow-md flex items-center justify-center text-lg font-medium border-2 ${
                         index === 0
-                          ? "border-blue-300 dark:border-blue-700"
+                          ? "border-purple-300 dark:border-purple-700"
                           : index === queue.length - 1
                           ? "border-green-300 dark:border-green-700"
                           : "border-gray-200 dark:border-gray-600"

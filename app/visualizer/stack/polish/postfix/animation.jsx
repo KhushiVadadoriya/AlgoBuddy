@@ -11,7 +11,7 @@ const AnimatedStackItem = ({ char, isTop }) => (
     exit={{ y: 30, opacity: 0, scale: 0.8 }}
     transition={{ type: "spring", stiffness: 300, damping: 20 }}
     className={`p-3 border-2 rounded text-center font-medium
-      ${isTop ? "bg-blue-100 dark:bg-blue-900 border-blue-300" : "bg-white dark:bg-gray-700 border-gray-200"}`}
+      ${isTop ? "bg-purple-100 dark:bg-purple-900 border-purple-300" : "bg-white dark:bg-gray-700 border-gray-200"}`}
   >
     {char}
     {isTop && <div className="text-xs mt-1 text-gray-500">(Top)</div>}
@@ -126,8 +126,8 @@ const InfixToPostfixVisualizer = () => {
         <div className="bg-white dark:bg-neutral-950 p-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 mb-6">
           <div className="flex flex-col sm:flex-row gap-4 mb-4">
             <input type="text" value={infix} onChange={e => setInfix(e.target.value)} placeholder="Enter infix expression (e.g., (A+B)*C)"
-                   className="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-neutral-900 dark:text-white"/>
-            <button onClick={convertInfixToPostfix} disabled={isProcessing} className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50">{isProcessing ? "Converting..." : "Convert"}</button>
+                   className="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 dark:bg-neutral-900 dark:text-white"/>
+            <button onClick={convertInfixToPostfix} disabled={isProcessing} className="px-6 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 disabled:opacity-50">{isProcessing ? "Converting..." : "Convert"}</button>
             <button onClick={reset} className="px-6 py-2 bg-red-500 text-white rounded-md">Reset</button>
           </div>
 
@@ -135,7 +135,7 @@ const InfixToPostfixVisualizer = () => {
             <div className="flex flex-col gap-4 mt-4">
               <div className="flex justify-between items-center">
                 <button onClick={playPrevStep} disabled={currentStep === 0 || isAnimating} className="px-4 py-2 bg-gray-200 dark:bg-neutral-900 rounded-md disabled:opacity-50">Previous</button>
-                <button onClick={togglePlayPause} className="px-4 py-2 bg-blue-600 text-white rounded-md">{isPlaying ? "Pause" : "Play"}</button>
+                <button onClick={togglePlayPause} className="px-4 py-2 bg-purple-600 text-white rounded-md">{isPlaying ? "Pause" : "Play"}</button>
                 <button onClick={playNextStep} disabled={currentStep >= steps.length - 1 || isAnimating} className="px-4 py-2 bg-gray-200 dark:bg-neutral-900 rounded-md disabled:opacity-50">Next</button>
               </div>
               <div className="flex items-center gap-4">
@@ -146,7 +146,7 @@ const InfixToPostfixVisualizer = () => {
                 <div className="text-sm text-gray-600 dark:text-gray-400 ml-auto">Step {currentStep + 1} of {steps.length}</div>
               </div>
               <div className="w-full bg-gray-200 dark:bg-neutral-900 rounded-full h-2.5">
-                <motion.div className="bg-blue-600 h-2.5 rounded-full" initial={false} animate={{ width: `${(currentStep / (steps.length - 1)) * 100}%` }} transition={{ type: "spring", stiffness: 80 }}/>
+                <motion.div className="bg-purple-600 h-2.5 rounded-full" initial={false} animate={{ width: `${(currentStep / (steps.length - 1)) * 100}%` }} transition={{ type: "spring", stiffness: 80 }}/>
               </div>
             </div>
           )}
@@ -155,7 +155,7 @@ const InfixToPostfixVisualizer = () => {
         {/* Status panel with GSAP flash */}
         <div ref={statusRef} className="bg-white dark:bg-neutral-950 p-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 mb-6">
           <h2 className="text-xl font-semibold mb-4">Conversion Status</h2>
-          {operation && <div className="mb-4 p-3 rounded-lg bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200">{operation}</div>}
+          {operation && <div className="mb-4 p-3 rounded-lg bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200">{operation}</div>}
           {message && <div className={`p-3 rounded-lg ${message.includes("Added") ? "bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200" : message.includes("Popped") ? "bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200" : message.includes("Pushed") ? "bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200" : "bg-gray-100 dark:bg-neutral-900 text-gray-800 dark:text-gray-200"}`}>{message}</div>}
           {postfix && currentStep === steps.length - 1 && (
             <motion.div initial={{ scale: 0.8, y: 20 }} animate={{ scale: 1, y: 0 }} transition={{ type: "spring", stiffness: 200 }} className="mt-4 p-3 rounded-lg bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200">
@@ -219,7 +219,7 @@ const InfixToPostfixVisualizer = () => {
                 </tr></thead>
                 <tbody className="bg-white dark:bg-neutral-900 divide-y divide-gray-200 dark:divide-gray-700">
                   {steps.map((step, idx) => (
-                    <motion.tr key={idx} onClick={() => jumpToStep(idx)} className={`cursor-pointer ${currentStep === idx ? "bg-blue-50 dark:bg-neutral-950" : "hover:bg-gray-50 dark:hover:bg-neutral-950"}`}
+                    <motion.tr key={idx} onClick={() => jumpToStep(idx)} className={`cursor-pointer ${currentStep === idx ? "bg-purple-50 dark:bg-neutral-950" : "hover:bg-gray-50 dark:hover:bg-neutral-950"}`}
                                whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.98 }}>
                       <td className="px-4 py-2 whitespace-nowrap text-sm font-medium">{idx + 1}</td>
                       <td className="px-4 py-2 whitespace-nowrap text-sm">{step.action}</td>

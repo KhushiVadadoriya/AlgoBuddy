@@ -721,7 +721,7 @@ export default function TrieAnimation() {
                   fillHex = "#ef4444"; // red-500
                   strokeHex = "#f87171";
                 } else if (isActivePath) {
-                  fillHex = "#3b82f6"; // blue-500
+                  fillHex = "#3b82f6"; // purple-500
                   strokeHex = "#60a5fa";
                 }
 
