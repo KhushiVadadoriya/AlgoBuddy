@@ -21,6 +21,21 @@ Capabilities & Guidelines:
 7. Keep responses concise and structured. Do not overwhelm the user with walls of text.
 8. If asked about something unrelated to programming, computer science, or DSA, politely redirect the conversation back to algorithms and data structures.`;
 
+export async function POST(req) {
+  try {
+    const cookieStore = cookies();
+    const supabase = createServerClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+      {
+        cookies: {
+          get(name) {
+            return cookieStore.get(name)?.value;
+          },
+        },
+      }
+    );
+
     const { data: authData } = await supabase.auth.getUser();
     if (!authData?.user) {
       return Response.json({ error: "Unauthorized." }, { status: 401 });
