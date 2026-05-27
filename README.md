@@ -32,6 +32,7 @@ AlgoBuddy is an open-source, interactive DSA learning platform that brings algor
 - Queue: Enqueue/Dequeue, Peek Front, isEmpty, isFull, Single-ended, Double-ended, Circular, Priority Queue, Array and Linked List implementations
 - Linked List: Singly, Doubly, Circular — with Insertion, Deletion, Traversal, Merge, Reverse, and Comparison
 - Trees: Binary Tree types, In-order Traversal
+-- HashMap: Insert, Search, Delete operations with collision handling visualization
 
 **User System**
 - Email/password auth with Cloudflare Turnstile captcha verification
@@ -50,6 +51,39 @@ AlgoBuddy is an open-source, interactive DSA learning platform that brings algor
 - Complexity graphs rendered with Recharts
 
 ---
+
+## 📸 Screenshots
+
+### 🏠 Home Page
+
+![Home Page](public/screenshots/Home-page.png)
+
+---
+
+### 🔐 Authentication Page
+
+![Login Page](public/screenshots/login-page.png)
+
+---
+
+### 🧠 Visualizer Dashboard
+
+![Visualizer](public/screenshots/visualizer-page.png)
+
+---
+
+### 🔄 Queue Visualization
+
+![Queue Visualization](public/screenshots/queue-visualization-page.png)
+
+---
+
+### 📚 Queue Operations
+
+![Queue Operations](public/screenshots/queue-operations-page.png)
+
+
+
 
 ## Tech Stack
 

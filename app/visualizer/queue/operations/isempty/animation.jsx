@@ -1,5 +1,7 @@
 "use client";
 import React, { useState } from "react";
+import usePlayback from "@/app/hooks/usePlayback";
+import LinearMemoryControls from "@/app/components/ui/LinearMemoryControls";
 
 const QueueVisualizer = () => {
   const [queue, setQueue] = useState([]);
@@ -7,12 +9,13 @@ const QueueVisualizer = () => {
   const [operation, setOperation] = useState(null);
   const [message, setMessage] = useState("Queue is empty");
   const [isAnimating, setIsAnimating] = useState(false);
+  const { speed, setSpeed } = usePlayback(1);
 
   /* ---------- helpers ---------- */
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   const showOp = async (txt, ms = 800) => {
     setOperation(txt);
-    await sleep(ms);
+    await sleep(ms / speed);
     setOperation(null);
   };
 
@@ -70,6 +73,7 @@ const QueueVisualizer = () => {
 
       <div className="max-w-4xl mx-auto">
         {/* ----- Controls card ----- */}
+<<<<<<< HEAD
         <div className="bg-white dark:bg-neutral-950 p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 mb-8">
           <div className="flex flex-col sm:flex-row gap-4 mb-4">
             <input
@@ -148,6 +152,23 @@ const QueueVisualizer = () => {
             )}
           </div>
         </div>
+=======
+        <LinearMemoryControls
+          inputValue={inputValue}
+          setInputValue={setInputValue}
+          isAnimating={isAnimating}
+          operation={operation}
+          message={message}
+          speed={speed}
+          onSpeedChange={setSpeed}
+          actions={[
+            { label: "Enqueue", onClick: enqueue, variant: "primary", needsInput: true },
+            { label: "Dequeue", onClick: dequeue, disabled: queue.length === 0, variant: "secondary" },
+            { label: "IsEmpty", onClick: checkEmpty, variant: "secondary" },
+            { label: "Reset", onClick: reset, variant: "outline" }
+          ]}
+        />
+>>>>>>> upstream/main
 
         {/* ----- Visualisation card (hidden when empty) ----- */}
         {queue.length > 0 && (
@@ -156,7 +177,11 @@ const QueueVisualizer = () => {
 
             <div className="flex items-center gap-3 w-full justify-center">
               {/* Front pointer */}
+<<<<<<< HEAD
               <div className="text-purple-600 dark:text-purple-400 font-medium flex flex-col items-center">
+=======
+              <div className="text-primary dark:text-[#c27cf7] font-medium flex flex-col items-center">
+>>>>>>> upstream/main
                 <span>Front</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -188,7 +213,11 @@ const QueueVisualizer = () => {
                     <div
                       className={`w-24 h-24 rounded-lg shadow-md flex items-center justify-center text-lg font-medium border-2 ${
                         index === 0
+<<<<<<< HEAD
                           ? "border-purple-300 dark:border-purple-700"
+=======
+                          ? "border-[#c27cf7] dark:border-primary-dark"
+>>>>>>> upstream/main
                           : index === queue.length - 1
                           ? "border-green-300 dark:border-green-700"
                           : "border-gray-200 dark:border-gray-600"

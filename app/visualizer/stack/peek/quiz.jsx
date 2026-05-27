@@ -1,7 +1,6 @@
 "use client";
-import React, { useState } from 'react';
-import { FaCheck, FaTimes, FaArrowRight, FaArrowLeft, FaInfoCircle, FaRedo, FaTrophy, FaStar, FaAward } from 'react-icons/fa';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from "react";
+import QuizEngine from "@/app/components/ui/QuizEngine";
 
 const StackQuiz = () => {
   const questions = [
@@ -112,6 +111,7 @@ const StackQuiz = () => {
     },
   ];
 
+<<<<<<< HEAD
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [score, setScore] = useState(0);
@@ -461,6 +461,9 @@ const StackQuiz = () => {
       )}
     </section>
   );
+=======
+  return <QuizEngine title="Stack Quiz Challenge" questions={questions} />;
+>>>>>>> upstream/main
 };
 
 export default StackQuiz;

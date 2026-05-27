@@ -1,5 +1,7 @@
 "use client";
 import React, { useState } from "react";
+import usePlayback from "@/app/hooks/usePlayback";
+import LinearMemoryControls from "@/app/components/ui/LinearMemoryControls";
 
 const PriorityQueueVisualizer = () => {
   /* ---------- state ---------- */
@@ -9,12 +11,13 @@ const PriorityQueueVisualizer = () => {
   const [operation, setOperation] = useState(null);
   const [message, setMessage] = useState("Priority queue is empty");
   const [isAnimating, setIsAnimating] = useState(false);
+  const { speed, setSpeed } = usePlayback(1);
 
   /* ---------- helpers ---------- */
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   const showOp = async (txt, ms = 800) => {
     setOperation(txt);
-    await sleep(ms);
+    await sleep(ms / speed);
     setOperation(null);
   };
 
@@ -63,7 +66,7 @@ const PriorityQueueVisualizer = () => {
     setIsAnimating(true);
     const minEl = pq[0];
     setMessage(`Min element: "${minEl.val}" (priority ${minEl.pri})`);
-    await sleep(1500);
+    await sleep(1500 / speed);
     setIsAnimating(false);
   };
 
@@ -85,6 +88,7 @@ const PriorityQueueVisualizer = () => {
 
       <div className="max-w-4xl mx-auto">
         {/* ----- Controls card ----- */}
+<<<<<<< HEAD
         <div className="bg-white dark:bg-neutral-950 p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 mb-8">
           {/* Inputs row */}
           <div className="flex flex-col sm:flex-row gap-4 mb-4">
@@ -171,6 +175,39 @@ const PriorityQueueVisualizer = () => {
               </div>
             )}
           </div>
+=======
+        <div className="bg-white dark:bg-neutral-950 p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 mb-8 w-full flex flex-col items-center">
+          {/* Priority Input row */}
+          <div className="w-full flex justify-center mb-6">
+            <label className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-neutral-900 px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700">
+              <span className="font-medium">Priority:</span>
+              <input
+                type="number"
+                value={inputPriority}
+                onChange={(e) => setInputPriority(e.target.value)}
+                placeholder="Number"
+                className="w-24 p-1 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-neutral-800 focus:ring-2 focus:ring-blue-500 focus:outline-none text-center"
+                disabled={isAnimating}
+              />
+            </label>
+          </div>
+
+          <LinearMemoryControls
+            inputValue={inputValue}
+            setInputValue={setInputValue}
+            isAnimating={isAnimating}
+            operation={operation}
+            message={message}
+            speed={speed}
+            onSpeedChange={setSpeed}
+            actions={[
+              { label: "Insert", onClick: insert, variant: "primary", needsInput: true },
+              { label: "Extract-Min", onClick: extractMin, disabled: pq.length === 0, variant: "secondary" },
+              { label: "Peek-Min", onClick: peekMin, disabled: pq.length === 0, variant: "secondary" },
+              { label: "Reset", onClick: clear, variant: "outline" }
+            ]}
+          />
+>>>>>>> upstream/main
         </div>
 
         {/* ----- Visualisation card (hidden when empty) ----- */}
@@ -189,7 +226,11 @@ const PriorityQueueVisualizer = () => {
                   <div
                     className={`w-24 h-24 rounded-lg shadow-md flex flex-col items-center justify-center text-lg font-medium border-2 ${
                       idx === 0
+<<<<<<< HEAD
                         ? "border-purple-300 dark:border-purple-700 bg-purple-50 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200"
+=======
+                        ? "border-[#c27cf7] dark:border-primary-dark bg-blue-50 dark:bg-blue-900/30 text-primary-dark dark:text-blue-200"
+>>>>>>> upstream/main
                         : "border-gray-200 dark:border-gray-600 bg-white dark:bg-neutral-900"
                     }`}
                   >

@@ -1,5 +1,7 @@
 "use client";
 import React, { useState } from "react";
+import usePlayback from "@/app/hooks/usePlayback";
+import LinearMemoryControls from "@/app/components/ui/LinearMemoryControls";
 
 const QueueVisualizer = () => {
   const [queue, setQueue] = useState([]);
@@ -7,6 +9,7 @@ const QueueVisualizer = () => {
   const [operation, setOperation] = useState(null);
   const [message, setMessage] = useState("");
   const [isAnimating, setIsAnimating] = useState(false);
+  const { speed, setSpeed } = usePlayback(1);
 
   const enqueue = () => {
     if (!inputValue.trim()) {
@@ -21,7 +24,7 @@ const QueueVisualizer = () => {
       setMessage(`"${inputValue}" added to rear`);
       setInputValue("");
       setIsAnimating(false);
-    }, 1000);
+    }, 1000 / speed);
   };
 
   const dequeue = () => {
@@ -37,7 +40,7 @@ const QueueVisualizer = () => {
       setOperation(null);
       setMessage(`"${dequeuedValue}" removed from front`);
       setIsAnimating(false);
-    }, 1000);
+    }, 1000 / speed);
   };
 
   const reset = () => {
@@ -53,6 +56,7 @@ const QueueVisualizer = () => {
       </p>
 
       {/* ------- Controls ------- */}
+<<<<<<< HEAD
       <div className="flex flex-col items-center">
         <div className="bg-white max-w-4xl dark:bg-neutral-950 p-6 rounded-xl shadow-lg mb-8 border border-gray-200 dark:border-gray-700 w-full flex flex-col items-center">
           <div className="flex flex-col sm:flex-row gap-4 mb-4 w-full justify-center items-center">
@@ -150,6 +154,22 @@ const QueueVisualizer = () => {
             )}
           </div>
         </div>
+=======
+        <LinearMemoryControls
+          inputValue={inputValue}
+          setInputValue={setInputValue}
+          isAnimating={isAnimating}
+          operation={operation}
+          message={message}
+          speed={speed}
+          onSpeedChange={setSpeed}
+          actions={[
+            { label: "Enqueue", onClick: enqueue, variant: "primary", needsInput: true },
+            { label: "Dequeue", onClick: dequeue, disabled: queue.length === 0, variant: "secondary" },
+            { label: "Reset", onClick: reset, variant: "outline" }
+          ]}
+        />
+>>>>>>> upstream/main
 
         {/* ------- Queue Visualization (hidden when empty) ------- */}
         {queue.length > 0 && (
@@ -159,7 +179,11 @@ const QueueVisualizer = () => {
             {/* Queue row with Front / Rear labels on the sides */}
             <div className="flex items-center gap-3 w-full justify-center">
               {/* Front label */}
+<<<<<<< HEAD
               <div className="text-purple-600 dark:text-purple-400 font-medium flex flex-col items-center">
+=======
+              <div className="text-primary dark:text-[#c27cf7] font-medium flex flex-col items-center">
+>>>>>>> upstream/main
                 <span>Front</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -191,7 +215,11 @@ const QueueVisualizer = () => {
                     <div
                       className={`w-24 h-24 rounded-lg shadow-md flex items-center justify-center text-lg font-medium border-2 ${
                         index === 0
+<<<<<<< HEAD
                           ? "border-purple-300 dark:border-purple-700"
+=======
+                          ? "border-[#c27cf7] dark:border-primary-dark"
+>>>>>>> upstream/main
                           : index === queue.length - 1
                           ? "border-green-300 dark:border-green-700"
                           : "border-gray-200 dark:border-gray-600"
@@ -222,7 +250,6 @@ const QueueVisualizer = () => {
             </div>
           </div>
         )}
-      </div>
     </main>
   );
 };

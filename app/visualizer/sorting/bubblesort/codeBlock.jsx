@@ -1,7 +1,6 @@
 'use client';
-import AppleCodeBlock from '@/app/components/ui/AppleCodeBlock';
+import CodeBlock from '@/app/components/ui/CodeBlock';
 
-// ─── All code examples for Bubble Sort ────────────────────────────────────
 const codeExamples = {
   javascript: `// Bubble Sort in JavaScript
 function bubbleSort(arr) {
@@ -118,7 +117,6 @@ int main() {
 }`,
 };
 
-// ─── Filenames shown in the title bar ─────────────────────────────────────
 const fileNames = {
   javascript: 'bubbleSort.js',
   python: 'bubble_sort.py',
@@ -127,9 +125,12 @@ const fileNames = {
   cpp: 'bubble_sort.cpp',
 };
 
-// ─── Component ────────────────────────────────────────────────────────────
-const CodeBlock = () => (
-  <AppleCodeBlock codeExamples={codeExamples} fileNames={fileNames} />
+const BubbleSortCode = () => (
+  <CodeBlock
+    variant="macos"
+    codeExamples={codeExamples}
+    fileNames={fileNames}
+  />
 );
 
-export default CodeBlock;
+export default BubbleSortCode;

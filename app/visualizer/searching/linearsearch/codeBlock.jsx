@@ -1,7 +1,6 @@
 'use client';
-import AppleCodeBlock from '@/app/components/ui/AppleCodeBlock';
+import CodeBlock from '@/app/components/ui/CodeBlock';
 
-// ─── All code examples for Linear Search ───────────────────────────────────
 const codeExamples = {
   javascript: `// Linear Search in JavaScript
 function linearSearch(arr, target) {
@@ -118,12 +117,11 @@ int main() {
     } else {
         cout << "Element not found" << endl;
     }
-
+    
     return 0;
 }`,
 };
 
-// ─── Filenames shown in the title bar ──────────────────────────────────────
 const fileNames = {
   javascript: 'linearSearch.js',
   python: 'linear_search.py',
@@ -132,9 +130,12 @@ const fileNames = {
   cpp: 'linear_search.cpp',
 };
 
-// ─── Component ─────────────────────────────────────────────────────────────
-const CodeBlock = () => (
-  <AppleCodeBlock codeExamples={codeExamples} fileNames={fileNames} />
+const LinearSearchCode = () => (
+  <CodeBlock
+    variant="macos"
+    codeExamples={codeExamples}
+    fileNames={fileNames}
+  />
 );
 
-export default CodeBlock;
+export default LinearSearchCode;

@@ -1,11 +1,9 @@
 "use client";
-
-import React, { useState } from 'react';
-import { FaCheck, FaTimes, FaArrowRight, FaArrowLeft, FaInfoCircle, FaRedo, FaTrophy, FaStar, FaAward } from 'react-icons/fa';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from "react";
+import QuizEngine from "@/app/components/ui/QuizEngine";
 
 const Quiz = () => {
-const questions = [
+  const questions = [
         {
         question: "What is the defining characteristic of a circular linked list?",
         options: [
@@ -140,6 +138,7 @@ const questions = [
     }
 ];
 
+<<<<<<< HEAD
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [score, setScore] = useState(0);
@@ -528,6 +527,9 @@ const questions = [
       )}
     </section>
   );
+=======
+  return <QuizEngine title="Linked List Quiz Challenge" questions={questions} />;
+>>>>>>> upstream/main
 };
 
 export default Quiz;

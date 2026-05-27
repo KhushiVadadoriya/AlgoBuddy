@@ -2,12 +2,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import PushPop from "@/app/components/ui/PushPop";
+import usePlayback from "@/app/hooks/usePlayback";
 
 const StackVisualizer = () => {
   const [stack, setStack] = useState([]);
   const [operation, setOperation] = useState(null);
   const [message, setMessage] = useState("");
   const [isAnimating, setIsAnimating] = useState(false);
+  const { speed, setSpeed } = usePlayback(1);
 
   const stackRef = useRef(null);
   const itemRefs = useRef([]);
@@ -26,7 +28,7 @@ const StackVisualizer = () => {
       setStack(nums);
       setOperation(null);
       setIsAnimating(false);
-    }, 600);
+    }, 600 / speed);
   };
 
   /* ---------- gsap animations (safe) ---------- */
@@ -86,21 +88,29 @@ const StackVisualizer = () => {
   }, [stack, operation]);
 
   return (
-    <main className="container mx-auto px-6 pb-4">
+    <main className="container mx-auto">
       <p className="text-lg text-center text-gray-600 dark:text-gray-400 mb-8">
         Visualize Push, Pop, and Peek operations
       </p>
 
-      <div className="max-w-md mx-auto">
+      <div className="max-w-4xl mx-auto">
         <PushPop
           stack={stack}
           setStack={setStack}
           isAnimating={isAnimating}
           setIsAnimating={setIsAnimating}
-          setMessage={setMessage}
+          operation={operation}
           setOperation={setOperation}
+          message={message}
+          setMessage={setMessage}
+          speed={speed}
+          setSpeed={setSpeed}
+          extraActions={[
+            { label: "Add Random Stack", onClick: addRandomStack, disabled: isAnimating || stack.length > 0 }
+          ]}
         />
 
+<<<<<<< HEAD
         <button
           onClick={addRandomStack}
           disabled={isAnimating || stack.length}
@@ -117,6 +127,9 @@ const StackVisualizer = () => {
             </div>
           )}
 
+=======
+        <div ref={stackRef} className="bg-white dark:bg-neutral-950 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
+>>>>>>> upstream/main
           {/* vertical stack */}
           <div className="flex flex-col items-center min-h-[200px]">
             <div className="w-full max-w-xs">
@@ -131,7 +144,11 @@ const StackVisualizer = () => {
                       key={idx}
                       ref={(el) => (itemRefs.current[idx] = el)}
                       className={`p-4 rounded-lg border-2 text-center font-medium transition-all ${
+<<<<<<< HEAD
                         idx === 0 ? "bg-purple-100 dark:bg-purple-900 border-purple-300 dark:border-purple-700" : "bg-white dark:bg-gray-700 border-gray-200 dark:border-gray-600"
+=======
+                        idx === 0 ? "bg-blue-100 dark:bg-blue-900 border-[#c27cf7] dark:border-primary-dark" : "bg-white dark:bg-gray-700 border-gray-200 dark:border-gray-600"
+>>>>>>> upstream/main
                       }`}
                     >
                       {num}

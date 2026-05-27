@@ -139,7 +139,11 @@ const LinkedListVisualizer = () => {
             <button
               onClick={addNode}
               disabled={isAnimating || !inputValue}
+<<<<<<< HEAD
               className="w-full rounded-lg bg-purple-600 px-6 py-3 text-white disabled:bg-gray-400 sm:w-auto"
+=======
+              className="w-full rounded-lg bg-primary px-6 py-3 text-white disabled:bg-gray-400 sm:w-auto"
+>>>>>>> upstream/main
             >
               {isAnimating ? "Adding..." : "Add Node"}
             </button>
@@ -166,11 +170,19 @@ const LinkedListVisualizer = () => {
       <VisualizerCard>
         <div className="mb-6 flex justify-center gap-4 text-sm sm:gap-8 sm:text-base">
           <div className="flex items-center">
+<<<<<<< HEAD
             <div className="mr-2 h-4 w-4 rounded-full bg-purple-500"></div>
             <span>Data</span>
           </div>
           <div className="flex items-center">
             <div className="mr-2 h-4 w-4 rounded-full bg-purple-300 dark:bg-purple-600"></div>
+=======
+            <div className="mr-2 h-4 w-4 rounded-full bg-primary"></div>
+            <span>Data</span>
+          </div>
+          <div className="flex items-center">
+            <div className="mr-2 h-4 w-4 rounded-full bg-[#c27cf7] dark:bg-primary"></div>
+>>>>>>> upstream/main
             <span>Next Pointer</span>
           </div>
         </div>
@@ -191,10 +203,17 @@ const LinkedListVisualizer = () => {
                     ref={(el) => (nodeRefs.current[index] = el)}
                     className="node flex"
                   >
+<<<<<<< HEAD
                     <div className="data-part w-20 rounded-l-lg bg-purple-500 p-4 text-center text-white">
                       {node.value}
                     </div>
                     <div className="next-part w-20 rounded-r-lg bg-purple-300 p-4 text-center font-mono dark:bg-purple-600">
+=======
+                    <div className="data-part w-20 rounded-l-lg bg-primary p-4 text-center text-white">
+                      {node.value}
+                    </div>
+                    <div className="next-part w-20 rounded-r-lg bg-[#c27cf7] p-4 text-center font-mono dark:bg-primary">
+>>>>>>> upstream/main
                       {node.next}
                     </div>
                   </div>

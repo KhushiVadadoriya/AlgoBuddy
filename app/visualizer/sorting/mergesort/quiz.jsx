@@ -1,7 +1,6 @@
 "use client";
-import React, { useState } from 'react';
-import { FaCheck, FaTimes, FaArrowRight, FaArrowLeft, FaInfoCircle, FaRedo, FaTrophy, FaStar, FaAward } from 'react-icons/fa';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from "react";
+import QuizEngine from "@/app/components/ui/QuizEngine";
 
 const MergeSortQuiz = () => {
   const questions = [
@@ -84,6 +83,7 @@ const MergeSortQuiz = () => {
     }
   ];
 
+<<<<<<< HEAD
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [score, setScore] = useState(0);
@@ -433,6 +433,9 @@ const MergeSortQuiz = () => {
       )}
     </section>
   );
+=======
+  return <QuizEngine title="Merge Sort Quiz Challenge" questions={questions} />;
+>>>>>>> upstream/main
 };
 
 export default MergeSortQuiz;

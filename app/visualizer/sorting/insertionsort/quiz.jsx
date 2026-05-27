@@ -1,7 +1,6 @@
 "use client";
-import React, { useState, useEffect } from 'react';
-import { FaCheck, FaTimes, FaArrowRight, FaArrowLeft, FaInfoCircle, FaRedo, FaTrophy, FaStar, FaAward } from 'react-icons/fa';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from "react";
+import QuizEngine from "@/app/components/ui/QuizEngine";
 
 const InsertionSortQuiz = () => {
   const questions = [
@@ -84,6 +83,7 @@ const InsertionSortQuiz = () => {
     }
   ];
 
+<<<<<<< HEAD
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [score, setScore] = useState(0);
@@ -435,6 +435,9 @@ const InsertionSortQuiz = () => {
           )}
         </section>
   );
+=======
+  return <QuizEngine title="Insertion Sort Quiz Challenge" questions={questions} />;
+>>>>>>> upstream/main
 };
 
 export default InsertionSortQuiz;

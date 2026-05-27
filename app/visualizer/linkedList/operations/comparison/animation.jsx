@@ -131,7 +131,11 @@ const LinkedListComparison = () => {
           <button
             onClick={animateComparison}
             disabled={isAnimating || list1.length === 0 || list2.length === 0}
+<<<<<<< HEAD
             className="flex-1 rounded-lg bg-purple-600 px-4 py-3 text-white transition hover:bg-purple-700 disabled:bg-gray-400 sm:px-6"
+=======
+            className="flex-1 rounded-lg bg-primary px-4 py-3 text-white transition hover:bg-primary-dark disabled:bg-gray-400 sm:px-6"
+>>>>>>> upstream/main
           >
             {isAnimating ? "Comparing..." : "Compare Lists"}
           </button>

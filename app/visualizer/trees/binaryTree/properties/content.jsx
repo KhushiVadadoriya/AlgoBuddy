@@ -214,7 +214,11 @@ export default function Content() {
     {
       title: 'File Systems',
       desc: 'While general hierarchies represent folders, directory search structures are frequently balanced using binary trees to enable instantaneous lookups.',
+<<<<<<< HEAD
       icon: <Database className="w-6 h-6 text-purple-500" />
+=======
+      icon: <Database className="w-6 h-6 text-primary" />
+>>>>>>> upstream/main
     },
     {
       title: 'Decision Trees',
@@ -370,9 +374,15 @@ export default function Content() {
                 <span className="block text-xs font-semibold text-purple-600 dark:text-purple-400 uppercase mb-0.5">Depth</span>
                 <span className="text-lg font-black text-purple-700 dark:text-purple-300">{treeNodes[selectedNode].depth}</span>
               </div>
+<<<<<<< HEAD
               <div className="text-center bg-purple-500/10 dark:bg-purple-500/5 py-2.5 rounded-xl border border-purple-200/40 dark:border-purple-950/20">
                 <span className="block text-xs font-semibold text-purple-600 dark:text-purple-400 uppercase mb-0.5">Level</span>
                 <span className="text-lg font-black text-purple-700 dark:text-purple-300">{treeNodes[selectedNode].level}</span>
+=======
+              <div className="text-center bg-primary/10 dark:bg-primary/5 py-2.5 rounded-xl border border-blue-200/40 dark:border-blue-950/20">
+                <span className="block text-xs font-semibold text-primary dark:text-[#c27cf7] uppercase mb-0.5">Level</span>
+                <span className="text-lg font-black text-primary-dark dark:text-[#c27cf7]">{treeNodes[selectedNode].level}</span>
+>>>>>>> upstream/main
               </div>
               <div className="text-center bg-emerald-500/10 dark:bg-emerald-500/5 py-2.5 rounded-xl border border-emerald-200/40 dark:border-emerald-950/20">
                 <span className="block text-xs font-semibold text-emerald-600 dark:text-emerald-400 uppercase mb-0.5">Height</span>

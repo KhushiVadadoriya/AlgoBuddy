@@ -148,7 +148,11 @@ const CircularLinkedListVisualizer = () => {
           <div className="flex gap-4">
             <button
               onClick={addNode}
+<<<<<<< HEAD
               className={`flex-1 py-3 rounded-lg transition-all ${isAnimating || !inputValue ? 'bg-gray-300 dark:bg-gray-600 cursor-not-allowed' : 'bg-purple-600 hover:bg-purple-700'}`}
+=======
+              className={`flex-1 py-3 rounded-lg transition-all ${isAnimating || !inputValue ? 'bg-gray-300 dark:bg-gray-600 cursor-not-allowed' : 'bg-primary hover:bg-primary-dark'}`}
+>>>>>>> upstream/main
               disabled={isAnimating || !inputValue}
             >
               Add Node
@@ -248,12 +252,20 @@ const CircularLinkedListVisualizer = () => {
                         width: '160px',
                       }}
                     >
+<<<<<<< HEAD
                       <div className={`flex flex-col border-2 ${index === 0 ? 'border-green-500' : 'border-purple-500'} rounded-xl p-4 bg-white dark:bg-gray-700 shadow-md`}>
+=======
+                      <div className={`flex flex-col border-2 ${index === 0 ? 'border-green-500' : 'border-primary'} rounded-xl p-4 bg-white dark:bg-gray-700 shadow-md`}>
+>>>>>>> upstream/main
                         <div className="flex justify-between items-center mb-3">
                           <span className="font-mono text-xs text-gray-600 dark:text-gray-300">
                             {node.address}
                           </span>
+<<<<<<< HEAD
                           <span className={`text-xs px-2 py-1 rounded ${index === 0 ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' : 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200'}`}>
+=======
+                          <span className={`text-xs px-2 py-1 rounded ${index === 0 ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' : 'bg-blue-100 text-primary-dark dark:bg-blue-900 dark:text-blue-200'}`}>
+>>>>>>> upstream/main
                             {index === 0 ? 'HEAD' : `Node ${index}`}
                           </span>
                         </div>

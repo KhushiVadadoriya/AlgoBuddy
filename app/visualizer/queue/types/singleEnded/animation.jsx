@@ -1,5 +1,7 @@
 "use client";
 import React, { useState } from "react";
+import usePlayback from "@/app/hooks/usePlayback";
+import LinearMemoryControls from "@/app/components/ui/LinearMemoryControls";
 
 const SingleEndedQueueVisualizer = () => {
   const [queue, setQueue] = useState([]);
@@ -7,12 +9,13 @@ const SingleEndedQueueVisualizer = () => {
   const [operation, setOperation] = useState(null);
   const [message, setMessage] = useState("Queue is empty");
   const [isAnimating, setIsAnimating] = useState(false);
+  const { speed, setSpeed } = usePlayback(1);
 
   /* ---------- helpers ---------- */
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   const showOp = async (txt, ms = 800) => {
     setOperation(txt);
-    await sleep(ms);
+    await sleep(ms / speed);
     setOperation(null);
   };
 
@@ -52,7 +55,7 @@ const SingleEndedQueueVisualizer = () => {
     }
     setIsAnimating(true);
     setMessage(`Front element: "${queue[0]}"`);
-    await sleep(1500);
+    await sleep(1500 / speed);
     setIsAnimating(false);
   };
 
@@ -64,7 +67,7 @@ const SingleEndedQueueVisualizer = () => {
     }
     setIsAnimating(true);
     setMessage(`Rear element: "${queue[queue.length - 1]}"`);
-    await sleep(1500);
+    await sleep(1500 / speed);
     setIsAnimating(false);
   };
 
@@ -85,6 +88,7 @@ const SingleEndedQueueVisualizer = () => {
 
       <div className="max-w-4xl mx-auto">
         {/* ----- Controls card ----- */}
+<<<<<<< HEAD
         <div className="bg-white dark:bg-neutral-950 p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 mb-8">
           {/* Value input + Enqueue */}
           <div className="flex flex-col sm:flex-row gap-4 mb-4">
@@ -172,6 +176,24 @@ const SingleEndedQueueVisualizer = () => {
             )}
           </div>
         </div>
+=======
+        <LinearMemoryControls
+          inputValue={inputValue}
+          setInputValue={setInputValue}
+          isAnimating={isAnimating}
+          operation={operation}
+          message={message}
+          speed={speed}
+          onSpeedChange={setSpeed}
+          actions={[
+            { label: "Enqueue Rear", onClick: enqueueRear, variant: "primary", needsInput: true },
+            { label: "Dequeue Front", onClick: dequeueFront, disabled: queue.length === 0, variant: "secondary" },
+            { label: "Peek Front", onClick: peekFront, disabled: queue.length === 0, variant: "secondary" },
+            { label: "Peek Rear", onClick: peekRear, disabled: queue.length === 0, variant: "secondary" },
+            { label: "Reset", onClick: reset, variant: "outline" }
+          ]}
+        />
+>>>>>>> upstream/main
 
         {/* ----- Visualisation card (hidden when empty) ----- */}
         {queue.length > 0 && (
@@ -180,7 +202,11 @@ const SingleEndedQueueVisualizer = () => {
 
             <div className="flex items-center gap-3 w-full justify-center">
               {/* Front pointer */}
+<<<<<<< HEAD
               <div className="text-purple-600 dark:text-purple-400 font-medium flex flex-col items-center">
+=======
+              <div className="text-primary dark:text-[#c27cf7] font-medium flex flex-col items-center">
+>>>>>>> upstream/main
                 <span>Front</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -212,7 +238,11 @@ const SingleEndedQueueVisualizer = () => {
                     <div
                       className={`w-24 h-24 rounded-lg shadow-md flex items-center justify-center text-lg font-medium border-2 ${
                         index === 0
+<<<<<<< HEAD
                           ? "border-purple-300 dark:border-purple-700"
+=======
+                          ? "border-[#c27cf7] dark:border-primary-dark"
+>>>>>>> upstream/main
                           : index === queue.length - 1
                           ? "border-green-300 dark:border-green-700"
                           : "border-gray-200 dark:border-gray-600"
